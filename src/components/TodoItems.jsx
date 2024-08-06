@@ -5,7 +5,7 @@ export default function TodoItems({ todoItems, onDeleteClick }) {
     <div className="items-container">
       {todoItems.map((item) => (
         <TodoItem
-          key={item.id}
+          key={Math.floor(Math.random() * 10)}
           todoDate={item.dueDate}
           todoName={item.name}
           onDeleteClick={onDeleteClick}

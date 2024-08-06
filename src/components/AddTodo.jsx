@@ -1,8 +1,12 @@
 import { useState } from "react";
+import { MdAddComment } from "react-icons/md";
+import Alert from "./Alert";
 
 export default function AddTodo({ onNewTodo }) {
   const [todoName, setTodoName] = useState("");
   const [todoDate, setTodoDate] = useState("");
+  // const [showAlert, setShowAlert] = useState(false);
+
   const handleInputName = (event) => {
     setTodoName(event.target.value);
   };
@@ -10,9 +14,13 @@ export default function AddTodo({ onNewTodo }) {
     setTodoDate(event.target.value);
   };
   const handleAddButtonClick = () => {
-    onNewTodo(todoName, todoDate);
-    setTodoName("");
-    setTodoDate("");
+    if (todoName !== "" && todoDate !== "") {
+      onNewTodo(todoName, todoDate);
+      setTodoName("");
+      setTodoDate("");
+    } else {
+      alert("Empty todo is not added!");
+    }
   };
   return (
     <div className="container">
@@ -33,7 +41,7 @@ export default function AddTodo({ onNewTodo }) {
             className="btn btn-success todo-button"
             onClick={handleAddButtonClick}
           >
-            Add Todo
+            <MdAddComment />
           </button>
         </div>
       </div>
