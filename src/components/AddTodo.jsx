@@ -1,11 +1,9 @@
 import { useState } from "react";
 import { MdAddComment } from "react-icons/md";
-import Alert from "./Alert";
 
 export default function AddTodo({ onNewTodo }) {
   const [todoName, setTodoName] = useState("");
   const [todoDate, setTodoDate] = useState("");
-  // const [showAlert, setShowAlert] = useState(false);
 
   const handleInputName = (event) => {
     setTodoName(event.target.value);
