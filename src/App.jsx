@@ -9,14 +9,21 @@ import WelcomeMessage from "./components/WelcomeMessage";
 function App() {
   const [todo, setTodo] = useState([]);
   const handleOnClick = (inputName, inputDate) => {
-    let newTodo = [
-      ...todo,
+    // let newTodo = [
+    //   ...todo,
+    //   {
+    //     name: inputName,
+    //     dueDate: inputDate,
+    //   },
+    // ];
+    // setTodo(newTodo);
+    setTodo((currVal) => [
+      ...currVal,
       {
         name: inputName,
         dueDate: inputDate,
       },
-    ];
-    setTodo(newTodo);
+    ]);
   };
 
   const handleDeleteTodo = (TodoItemName) => {
