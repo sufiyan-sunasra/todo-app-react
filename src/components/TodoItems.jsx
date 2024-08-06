@@ -5,7 +5,7 @@ export default function TodoItems({ todoItems, onDeleteClick }) {
     <div className="items-container">
       {todoItems.map((item) => (
         <TodoItem
-          key={item}
+          key={item.id}
           todoDate={item.dueDate}
           todoName={item.name}
           onDeleteClick={onDeleteClick}
