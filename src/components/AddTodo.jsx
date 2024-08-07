@@ -24,6 +24,7 @@ export default function AddTodo() {
     const todoDate = todoDateElement.current.value;
     todoNameElement.current.value = "";
     todoDateElement.current.value = "";
+
     addNewTodo(todoName, todoDate);
     // setTodoName("");
     // setTodoDate("");

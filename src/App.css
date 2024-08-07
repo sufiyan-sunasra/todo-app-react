@@ -12,6 +12,9 @@ input{
 .items-container{
     text-align: left;
 }
+.align-left{
+    text-align: left;
+}
 
 .todo-button{
     min-width: 130px;
