@@ -1,8 +1,11 @@
 // import { useState } from "react";
-import { useRef } from "react";
+import { useContext, useRef } from "react";
 import { MdAddComment } from "react-icons/md";
+import { TodoItemsContext } from "../store/todo-item-store";
 
-export default function AddTodo({ onNewTodo }) {
+export default function AddTodo() {
+  const { addNewTodo } = useContext(TodoItemsContext);
+
   // const [todoName, setTodoName] = useState("");
   // const [todoDate, setTodoDate] = useState("");
 
@@ -14,13 +17,14 @@ export default function AddTodo({ onNewTodo }) {
   // };
   const todoNameElement = useRef();
   const todoDateElement = useRef();
+
   const handleAddButtonClick = (event) => {
     event.preventDefault();
     const todoName = todoNameElement.current.value;
     const todoDate = todoDateElement.current.value;
     todoNameElement.current.value = "";
     todoDateElement.current.value = "";
-    onNewTodo(todoName, todoDate);
+    addNewTodo(todoName, todoDate);
     // setTodoName("");
     // setTodoDate("");
   };

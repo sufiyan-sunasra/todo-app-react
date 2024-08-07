@@ -1,6 +1,9 @@
+import { useContext } from "react";
 import { MdDelete } from "react-icons/md";
+import { TodoItemsContext } from "../store/todo-item-store";
 
-export default function TodoItem({ todoDate, todoName, onDeleteClick }) {
+export default function TodoItem({ todoDate, todoName }) {
+  const { deleteTodo } = useContext(TodoItemsContext);
   return (
     <div className="container">
       <div className="row todo-row">
@@ -9,7 +12,7 @@ export default function TodoItem({ todoDate, todoName, onDeleteClick }) {
         <div className="col-2">
           <button
             className="btn btn-danger todo-button"
-            onClick={() => onDeleteClick(todoName)}
+            onClick={() => deleteTodo(todoName)}
           >
             <MdDelete />
           </button>
